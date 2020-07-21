@@ -6,7 +6,7 @@
    "description" : "v0.0.0 Suite of small tools with various purposes", 
    "credits" : "", 
    "instructions" : "", 
-   "promotionalLink" : "https://github.com/AcidBubbles/vam-Utilities", 
+   "promotionalLink" : "https://github.com/acidbubbles/vam-utilities", 
    "programVersion" : "1.19.0.5", 
    "contentList" : [ 
       "Custom\\Scripts\\AcidBubbles\\Utilities\\Utilities.cs"
