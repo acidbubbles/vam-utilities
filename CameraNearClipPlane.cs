@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -23,7 +21,7 @@ public class CameraNearClipPlane : MVRScript
         _originalNearClipDistance = _mainCamera.nearClipPlane;
         _originalFarClipDistance = _mainCamera.farClipPlane;
 
-        CreateTextField(new JSONStorableString("Warning", "Warning: If you increase the range, you could lose the menu and be forced to restart Virt-A-Mate.")).enabled = false;
+        CreateTextField(new JSONStorableString("Warning", "Warning: If you increase the range, you could lose the menu and be forced to restart Virt-A-Mate."));
 
         _nearClipPlaneJSON = new JSONStorableFloat("Near clip plane", _originalNearClipDistance, (float val) => SyncCameraClipping(), 0.01f, 1.5f, false);
         RegisterFloat(_nearClipPlaneJSON);
@@ -32,27 +30,11 @@ public class CameraNearClipPlane : MVRScript
         _farClipPlaneJSON = new JSONStorableFloat("Far clip plane", _originalFarClipDistance, (float val) => SyncCameraClipping(), 2f, 10000f, false);
         RegisterFloat(_farClipPlaneJSON);
         CreateSlider(_farClipPlaneJSON);
-
-        _ready = true;
-
-        SyncCameraClipping();
-
-        StartCoroutine(Temp());
-    }
-
-    private IEnumerator Temp()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(2);
-
-            _mainCamera.nearClipPlane = _originalNearClipDistance;
-            _mainCamera.farClipPlane = _originalFarClipDistance;
-        }
     }
 
     public void OnEnable()
     {
+        _ready = true;
         SyncCameraClipping();
     }
 

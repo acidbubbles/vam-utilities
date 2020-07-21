@@ -17,6 +17,7 @@ public class WindowCameraVisibility : MVRScript
         try
         {
             if (containingAtom.type != "WindowCamera") throw new InvalidOperationException("This plugin can only be applied on a WindowCamera atom.");
+            CreateTextField(new JSONStorableString("Info", "This plugin will hide the window camera from being rendered. Useful for recording with mirrors."));
             var cameraGroup = containingAtom.gameObject.transform.Find("reParentObject/object/rescaleObject/CameraGroup");
             if (cameraGroup == null) throw new NullReferenceException("Could not find the CameraGroup in the WindowCamera atom.");
             _planes = new List<GameObject>();
