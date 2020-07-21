@@ -53,8 +53,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="ForceEditMode.cs" />
-    <Compile Include="ForwardUnityLogsToSceneLogs.cs" />
+    <Compile Include="CameraNearClipPlane.cs" />
+    <Compile Include="BlendShapesController.cs" />
+    <Compile Include="TimeScaleController.cs" />
+    <Compile Include="WindowCameraVisibility.cs" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

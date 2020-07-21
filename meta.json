@@ -9,7 +9,10 @@
    "promotionalLink" : "https://github.com/acidbubbles/vam-utilities", 
    "programVersion" : "1.19.0.5", 
    "contentList" : [ 
-      "Custom\\Scripts\\AcidBubbles\\Utilities\\Utilities.cs"
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\BlendShapesController.cs",
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\CameraNearClipPlane.cs",
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\TimeScaleController.cs",
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\WindowCameraVisibility.cs"
    ], 
    "dependencies" : { 
    }

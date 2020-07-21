@@ -22,11 +22,11 @@ public class CameraNearClipPlane : MVRScript
 
         CreateTextField(new JSONStorableString("Warning", "Warning: If you increase the range, you could lose the menu and be forced to restart Virt-A-Mate.")).enabled = false;
 
-        _nearClipPlaneJSON = new JSONStorableFloat("Near clip plane", 0.01f, val => SyncCameraClipping(val), 0.01f, 1.5f, false);
+        _nearClipPlaneJSON = new JSONStorableFloat("Near clip plane", 0.01f, (float val) => SyncCameraClipping(), 0.01f, 1.5f, false);
         RegisterFloat(_nearClipPlaneJSON);
         CreateSlider(_nearClipPlaneJSON);
 
-        _farClipPlaneJSON = new JSONStorableFloat("Far clip plane", 0.01f, val => SyncCameraClipping(val), 0.01f, 1.5f, false);
+        _farClipPlaneJSON = new JSONStorableFloat("Far clip plane", 0.01f, (float val) => SyncCameraClipping(), 0.01f, 1.5f, false);
         RegisterFloat(_farClipPlaneJSON);
         CreateSlider(_farClipPlaneJSON);
 
