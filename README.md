@@ -2,6 +2,8 @@
 
 A collection of small scripts for Virt-A-Mate
 
+> Check out [Utilities on Virt-A-Mate Hub](https://hub.virtamate.com/resources/utilities.916/)
+
 ## Scripts
 
 - [CameraNearClipPlane](CameraNearClipPlane.cs) - Changes the camera clip plane, to see through walls for example
