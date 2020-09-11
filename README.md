@@ -10,6 +10,7 @@ A collection of small scripts for Virt-A-Mate
 - [ForceEditMode](ForceEditMode.cs) - Automatically switches to edit mode when loading a scene
 - [ForwardUnityLogsToSceneLogs](ForwardUnityLogsToSceneLogs.cs) - Prints Unity logs to the VaM messages log
 - [TimeScaleController](TimeScaleController.cs) - Lets you control the time scale using scripts
+- [TeleportOnLoad](TeleportOnLoad.cs) - Teleports the user navigation rig to the atom's position on load
 
 ## License
 

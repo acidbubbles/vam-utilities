@@ -57,6 +57,7 @@
     <Compile Include="BlendShapesController.cs" />
     <Compile Include="TimeScaleController.cs" />
     <Compile Include="WindowCameraVisibility.cs" />
+    <Compile Include="TeleportOnLoad.cs" />
   </ItemGroup>
 
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
