@@ -18,6 +18,8 @@ public class TeleportOnLoad : MVRScript
     private void TeleportNow()
     {
         var sc = SuperController.singleton;
+        var offset = new Vector3(sc.centerCameraTarget.transform.position.x - sc.navigationPlayArea.position.x, 0f, sc.centerCameraTarget.transform.position.z - sc.navigationPlayArea.position.z);
+        sc.navigationPlayArea.position = containingAtom.transform.position - offset;
         sc.navigationRig.position = sc.navigationPlayArea.position;
         sc.navigationRig.rotation = sc.navigationPlayArea.rotation;
         if (sc.navigationRigParent != null)
