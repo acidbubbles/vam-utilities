@@ -13,9 +13,10 @@ public class TimeScaleController : MVRScript
     public override void Init()
     {
         _timeControl = GameObject.FindObjectOfType<TimeControl>();
-        var timeScaleJSON = new JSONStorableFloat("Time Scale", 1f, val => _timeControl.currentScale = val, 0.1f, 1f);
+        
+        var timeScaleJSON = new JSONStorableFloat("Time Scale", 1f, val => _timeControl.currentScale = val, 0.1f, 1f) { isStorable = false };
         RegisterFloat(timeScaleJSON);
         CreateSlider(timeScaleJSON).label = "Time Scale (Set Only)";
-        _timeControl.currentScale = timeScaleJSON.val;
+        timeScaleJSON.valNoCallback = _timeControl.currentScale;
     }
 }
