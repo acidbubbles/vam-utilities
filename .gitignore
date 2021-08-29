@@ -3,3 +3,4 @@ obj/
 publish/
 *.jpg
 *.zip
+.idea/
