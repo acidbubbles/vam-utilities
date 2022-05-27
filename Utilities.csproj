@@ -51,6 +51,7 @@
     <Compile Include="BlendShapesController.cs" />
     <Compile Include="PlayerHeightController.cs" />
     <Compile Include="TimeScaleController.cs" />
+    <Compile Include="FieldOfViewController.cs" />
     <Compile Include="WindowCameraVisibility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

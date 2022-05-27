@@ -12,7 +12,8 @@
       "Custom\\Scripts\\AcidBubbles\\Utilities\\BlendShapesController.cs",
       "Custom\\Scripts\\AcidBubbles\\Utilities\\CameraNearClipPlane.cs",
       "Custom\\Scripts\\AcidBubbles\\Utilities\\TimeScaleController.cs",
-      "Custom\\Scripts\\AcidBubbles\\Utilities\\WindowCameraVisibility.cs"
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\WindowCameraVisibility.cs",
+      "Custom\\Scripts\\AcidBubbles\\Utilities\\FieldOfViewController.cs"
    ], 
    "dependencies" : { 
    }
