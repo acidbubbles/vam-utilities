@@ -8,23 +8,36 @@ using UnityEngine;
 /// </summary>
 public class FieldOfViewController : MVRScript
 {
+    bool _isSessionPlugin;
+    JSONStorableFloat _monitorFOVJSON;
+
     public override void Init()
     {
-        bool isSessionPlugin = containingAtom.type == "SessionPluginManager";
+        _isSessionPlugin = containingAtom.type == "SessionPluginManager";
         var slider = SuperController.singleton.monitorCameraFOVSlider;
 
-        var monitorFOVJSON = new JSONStorableFloat("Monitor FoV", 40f, slider.minValue, slider.maxValue)
+        _monitorFOVJSON = new JSONStorableFloat("Monitor FoV", 40f, slider.minValue, slider.maxValue)
         {
-            isStorable = isSessionPlugin,
+            isStorable = _isSessionPlugin,
             valNoCallback = slider.value,
             setCallbackFunction = val => slider.value = val
         };
-        RegisterFloat(monitorFOVJSON);
-        CreateSlider(monitorFOVJSON).label = "Monitor FoV (Set Only)";
+        RegisterFloat(_monitorFOVJSON);
+        CreateSlider(_monitorFOVJSON).label = "Monitor FoV (Set Only)";
 
-        if(isSessionPlugin)
+        if(_isSessionPlugin)
         {
-            slider.onValueChanged.AddListener(val => monitorFOVJSON.valNoCallback = val);
+            slider.onValueChanged.AddListener(OnMonitorCameraFovChanged);
+        }
+    }
+
+    void OnMonitorCameraFovChanged(float value) => _monitorFOVJSON.valNoCallback = value;
+
+    public void OnDestroy()
+    {
+        if(_isSessionPlugin)
+        {
+            SuperController.singleton.monitorCameraFOVSlider.onValueChanged.RemoveListener(OnMonitorCameraFovChanged);
         }
     }
 }
